@@ -38,9 +38,9 @@ export function stampImage(source, info) {
   ctx.drawImage(source, 0, 0, W, H);
 
   // Base unit scales smoothly for both portrait phone shots and landscape photos
-  const u = Math.max(Math.min(W, H) / 36, 11);
-  const pad = u * 0.95;
-  const gap = u * 1.38;
+  const u = Math.max(Math.min(W, H) / 38, 10);
+  const pad = u * 0.85;
+  const gap = u * 1.28;
   const font = (size, weight = 400) => `${weight} ${size}px Inter, "Noto Sans Devanagari", system-ui, sans-serif`;
   const maxTextW = W - pad * 2 - u * 0.8;
 
@@ -65,7 +65,7 @@ export function stampImage(source, info) {
     ...metaLines.map((t) => ({ t, size: u * 0.85, weight: 500, color: '#CBD5E1' })),
   ];
 
-  const panelH = pad * 1.6 + rows.length * gap + u * 0.7;
+  const panelH = pad * 1.4 + rows.length * gap + u * 0.55;
   const top = H - panelH;
 
   // Semi-opaque dark slate backdrop + subtle top border

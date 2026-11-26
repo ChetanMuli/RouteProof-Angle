@@ -351,8 +351,8 @@ tr.click:hover td { background: #F8FAFC; }
 /* Full-screen camera sheet */
 .sheet { position: fixed; inset: 0; z-index: 1100; background: #020617; color: #fff; display: flex; flex-direction: column; }
 .sheet-top { display: flex; align-items: center; justify-content: space-between; padding: calc(10px + env(safe-area-inset-top)) 14px 10px; border-bottom: 1px solid rgba(255,255,255,.1); }
-.sheet-stage { flex: 1; min-height: 0; display: grid; place-items: center; position: relative; overflow: hidden; }
-.sheet-stage video, .sheet-stage img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.sheet-stage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 6px; }
+.sheet-stage video, .sheet-stage img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; border-radius: 6px; }
 .gps-pill { display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.12); font-size: 13px; }
 .gps-pill.ok { background: rgba(5,150,105,.55); }
 .gps-pill.bad { background: rgba(220,38,38,.6); }

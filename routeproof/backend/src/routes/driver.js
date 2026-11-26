@@ -22,9 +22,13 @@ function businessDateFolder() {
 const upload = multer({
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
-      const dir = path.join(UPLOAD_DIR, businessDateFolder());
-      fs.mkdirSync(dir, { recursive: true });
-      cb(null, dir);
+      try {
+        const dir = path.join(UPLOAD_DIR, businessDateFolder());
+        fs.mkdirSync(dir, { recursive: true });
+        cb(null, dir);
+      } catch (err) {
+        cb(err);
+      }
     },
     filename: (req, file, cb) => cb(null, `${Date.now()}-${crypto.randomBytes(4).toString('hex')}.jpg`),
   }),

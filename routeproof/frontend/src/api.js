@@ -14,7 +14,7 @@ export async function api(path, { method = 'GET', body, form } = {}) {
     if (!location.pathname.startsWith('/login')) location.href = '/login';
   }
   const data = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(data.error || 'Something went wrong');
+  if (!res.ok) throw new Error(data.error || `Server error (${res.status})`);
   return data;
 }
 
